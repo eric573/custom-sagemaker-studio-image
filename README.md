@@ -2,6 +2,8 @@
 # Docker Environment Command
 
 ```
+
+
 Source tutorials
 - Saturn Cloud
   - https://www.youtube.com/watch?v=b4w_TKp6s38
@@ -15,15 +17,14 @@ https://stackoverflow.com/questions/38587325/aws-ecr-getauthorizationtoken
 https://stackoverflow.com/questions/70828205/pushing-an-image-to-ecr-getting-retrying-in-seconds
 
 # Build the docker file in current directory name tag *custom-donut-env-kernel* as name with tag *latest*
-docker image build -t custom-donut-env-kernel:latest .
+docker image build -t <image_name> .
 
 # Before we push our image to AWS ECR, we need to authenticate our docker CLI to our AWS ECR using the following command:
-aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 055100700552.dkr.ecr.us-west-1.amazonaws.com
+aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <resource_location>
 
 # Let docker know where to store image
-docker image tag custom-donut-env-kernel:latest 055100700552.dkr.ecr.us-west-1.amazonaws.com/custom-donut-env-kernel:latest
+docker image tag <image_name>:latest <resource_location>:latest
 
 # Push
-docker push 055100700552.dkr.ecr.us-west-1.amazonaws.com/custom-donut-env-kernel:latest
-
+docker push <resource_location>:latest
 ```

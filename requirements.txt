@@ -1,0 +1,7 @@
+pandas
+aiohttp
+nest_asyncio
+donut-python==1.0.9
+transformers==4.25.1
+timm==0.5.4
+tensorboard
